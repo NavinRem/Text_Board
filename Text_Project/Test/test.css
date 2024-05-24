@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center;
+  align-items: center;
+  border: 2px solid yellow;
+}
+
+.purple-border {
+  border: 2px solid purple;
+  padding: 10px;
+  margin: 5px;
+}

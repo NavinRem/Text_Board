@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LED Text</title>
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      .config-panel {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+      }
+
+      #led-text-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+
+      .led-text {
+        white-space: nowrap;
+        animation: move 5s infinite;
+      }
+
+      @keyframes move {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-120%);
+        }
+      }
+
+      /* Responsive font size */
+      @media screen and (max-width: 600px) {
+        .led-text {
+          font-size: calc(10rem + 10rem);
+        }
+      }
+
+      @media screen and (min-width: 601px) and (max-width: 1000px) {
+        .led-text {
+          font-size: calc(15rem + 15rem);
+        }
+      }
+
+      @media screen and (min-width: 1001px) {
+        .led-text {
+          font-size: calc(20rem + 20rem);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="config-panel">
+      <input type="text" id="led-input" placeholder="Enter LED text" />
+      <input type="color" id="text-color-picker" value="#ffffff" />
+      <select id="font-selector">
+        <option value="Arial">Arial</option>
+        <!-- class , id -->
+        <option value="Verdana">Verdana</option>
+        <option value="Tahoma">Tahoma</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Times New Roman">Times New Roman</option>
+      </select>
+      <select id="animation-selector">
+        <option value="move">Moving</option>
+        <option value="blink">Blinking</option>
+      </select>
+      <input type="color" id="board-color-picker" value="#000000" />
+      <label for="animation-duration">Animation Duration (seconds):</label>
+      <input type="number" id="animation-duration" value="5" />
+      <button id="update-animation">Update Animation</button>
+    </div>
+
+    <div id="led-text-container">
+      <div class="led-text" id="led-text"></div>
+    </div>
+
+    <script>
+      const inputs = document.querySelectorAll(
+        ".config-panel input, .config-panel select"
+      );
+      const animationDurationInput =
+        document.getElementById("animation-duration");
+      const updateAnimationButton = document.getElementById("update-animation");
+
+      inputs.forEach((input) => {
+        input.addEventListener("input", updateInputs);
+      });
+
+      updateAnimationButton.addEventListener("click", updateAnimation);
+
+      function updateInputs() {
+        const ledText = document.getElementById("led-text");
+        const ledInput = document.getElementById("led-input");
+        const textColorPicker = document.getElementById("text-color-picker");
+        const fontSelector = document.getElementById("font-selector");
+        const animationSelector = document.getElementById("animation-selector");
+        const boardColorPicker = document.getElementById("board-color-picker");
+
+        ledText.textContent = ledInput.value;
+        ledText.style.color = textColorPicker.value;
+        ledText.style.fontFamily = fontSelector.value;
+
+        document.body.style.backgroundColor = boardColorPicker.value;
+      }
+
+      function updateAnimation() {
+        const ledText = document.getElementById("led-text");
+        const animationDuration = animationDurationInput.value;
+
+        if (animationDuration <= 0) {
+          alert("Please enter a positive value for animation duration.");
+          return;
+        }
+
+        const animationType =
+          document.getElementById("animation-selector").value;
+        if (animationType === "move") {
+          ledText.style.animation = `move ${animationDuration}s infinite`;
+        } else if (animationType === "blink") {
+          ledText.style.animation = `blink ${animationDuration / 2}s infinite`; // Blinking duration is half of animation duration
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+.container {
+  position: relative; /* Establish a relative positioning context */
+}
+
+.static-div {
+  position: absolute; /* Make the static div positioned absolutely */
+  top: 0; /* Position it at the top of the container */
+  left: 0; /* Position it at the left of the container */
+  /* Set desired width and height for the static div */
+  width: 200px;
+  height: 100px;
+  background-color: lightgray; /* Optional styling */
+}
+
+.scrollable-div {
+  position: relative; /* Make the scrollable div positioned relatively within the container */
+  /* Set desired width and height for the scrollable div */
+  width: calc(100% - 200px); /* Account for the static div's width */
+  height: 200px;
+  overflow-y: auto; /* Enable vertical scrollbar */
+  background-color: white; /* Optional styling */
+}
