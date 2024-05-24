@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Texto - Edit</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="edit.css" />
+    <style>
+      body {
+        background: url(https://cdn.dribbble.com/users/1347217/screenshots/17831812/media/ad5b974b3416d541a0439b87deb1180d.jpg?resize=800x600&vertical=center);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="Container">
+      <div class="Header" style="display: flex">
+        <div class="logo_div">
+          <span class="Texto_logo">Texto</span>
+        </div>
+        <div class="Menu_panel">
+          <a href="index.html">
+            <button>Home</button>
+          </a>
+          <button>About Us</button>
+          <button>Folder</button>
+          <button>Contact</button>
+        </div>
+      </div>
+
+      <div class="edit_container">
+        <textarea
+          placeholder="Enter your text here (multiple lines allowed)"
+        ></textarea>
+        <div class="edit_title">
+          <span>Edit Details</span>
+        </div>
+        <div class="edit_panel">
+          <div class="edit_name">
+            <span>Text Size</span>
+            <span>Text Color</span>
+            <span>Background Color</span>
+            <span>Font Family</span>
+            <span>Text Speed</span>
+            <span>Blink Speed</span>
+            <span>Scroll Direction</span>
+          </div>
+          <div class="edit_tool">
+            <!--Tool for editing-->
+            <input type="range" class="text_size" />
+            <input type="color" class="text_color" />
+            <select>
+              <option></option>
+            </select>
+          </div>
+        </div>
+        <div class="pre_output"></div>
+      </div>
+    </div>
+  </body>
+</html>
