@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Texto - Display</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="edit.css" />
+    <style>
+      body {
+        background-image: url("/Text_Project/Home_img.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      .full-screen {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: fit-content;
+      }
+      .grp-btn {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+      }
+      .btn-func {
+        cursor: pointer;
+        border: 1px solid;
+        border-radius: 10px;
+        width: 100px;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-weight: bold;
+        height: 35px;
+        background-color: plum;
+      }
+      .btn-func:hover {
+        background-color: darkviolet;
+        color: aliceblue;
+      }
+      .btn-func:active {
+        transform: translateY(2px);
+      }
+      #green-btn {
+        background-color: green;
+        color: aliceblue;
+      }
+      #purple-btn {
+        background-color: purple;
+        color: aliceblue;
+      }
+      .main-title {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 40px;
+      }
+      .display {
+        margin: 10px 0 30px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 220px;
+      }
+      .run-text-dis {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        overflow: hidden; /* Hide overflowing text */
+        white-space: nowrap; /* Prevent text wrapping */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="Header">
+        <div class="logo_div">
+          <span class="Texto_logo">Texto</span>
+        </div>
+        <div class="Menu_panel">
+          <a href="index.html">
+            <button>Home</button>
+          </a>
+          <button>About Us</button>
+          <button>Folder</button>
+          <button>Contact</button>
+        </div>
+      </div>
+      <div class="full-screen">
+        <div class="main-title">
+          <span>Display</span>
+        </div>
+        <div class="display">
+          <div class="run-text-dis">
+            <span class="scrolling-text" id="run-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Exercitationem quae nisi molestias facilis fugit pariatur sequi
+              omnis nemo distinctio quis delectus at non, iste architecto saepe
+              deserunt ullam, vel voluptatibus!
+            </span>
+          </div>
+        </div>
+        <div class="grp-btn">
+          <a href="edit.html">
+            <button class="btn-func" id="purple-btn">Back to Edit</button>
+          </a>
+          <button class="btn-func">Pause</button>
+          <button class="btn-func">Full Screen</button>
+          <button class="btn-func" id="green-btn">Save</button>
+        </div>
+      </div>
+    </div>
+    <script src="script1.js"></script>
+  </body>
+</html>

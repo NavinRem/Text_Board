@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .text-container {
+        overflow: hidden; /* Hide overflowing text */
+        white-space: nowrap; /* Prevent text wrapping */
+        background-color: violet;
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+      }
+      .container {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+      }
+      button {
+        width: 500px;
+      }
+
+      .scrolling-text {
+        display: inline-flex; /* Allow text to scroll horizontally */
+        animation: scrolltext 5s linear infinite; /* Animation properties */
+      }
+
+      @keyframes scrolltext {
+        0% {
+          transform: translateX(30%); /* Start from the left */
+        }
+        100% {
+          transform: translateX(-100%); /* Move text beyond container width */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="text-container">
+        <span class="scrolling-text"
+          >Hello all htmlers, csser, This is a long text that will scroll
+          infinitely.</span
+        >
+      </div>
+      <div><button>fgfgfg</button></div>
+    </div>
+  </body>
+</html>

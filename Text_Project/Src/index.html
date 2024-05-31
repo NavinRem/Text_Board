@@ -7,15 +7,20 @@
     <link href="style.css" rel="stylesheet" />
     <style>
         body{
-            background-image: url("https://cdn.dribbble.com/users/1347217/screenshots/16576936/media/d9d42d3efa9df66e359dec0a848e4151.jpg");
+            background-image: url("/Text_Project/Home_img.png");
+            background-color: rgba(0, 0, 0, 0.5);
             background-repeat: no-repeat;
             background-size: cover;
+            background-position: center;
             background-attachment: fixed;
+        }
+        button{
+          cursor: pointer;
         }
     </style>
   <body>
     <div class="Container">
-      <div class="Header" style="display: flex">
+      <div class="Header">
         <div class="logo_div">
             <span class="Texto_logo">Texto</span>
         </div>
@@ -31,13 +36,12 @@
       <div class="Main_Title">
         <span class="MTitle">Warm welcome to Texto</span>
         <span class="STitle">Make your text alive</span>
+        <div class="btn_start">
+          <a href="edit.html">
+              <button>Get Started</button>
+          </a>
+        </div>
     </div>
-    <div class="btn_start">
-        <a href="edit.html">
-            <button>Get Started</button>
-        </a>
-          
-      </div>
-    </div>
+    </div> <!--Container-->
   </body>
 </html>

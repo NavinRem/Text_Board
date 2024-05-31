@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <script language="javaScript">
+      function change_background(color) {
+        document.bgColor = color;
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <label>color: <input type="text" name="color" /> </label>
+      <input
+        name="clrs"
+        type="button"
+        value="getcolor"
+        onClick="change_background(color.value) "
+      />
+    </form>
+    <a href="#" onClick="change_background('#099')">ClickBlue</a>
+    <a href="#" onMouseOver="change_background('#111')">Mouseoverblack</a>
+    <a href="#" onMouseOver="change_background('#fff')">Mouseover white</a>
+    <p id="myParagraph">
+      This is the paragraph content with an <a href="#">link</a>.
+    </p>
+
+    <script>
+      const paragraph = document.getElementById("myParagraph");
+      paragraph.textContent = "Updated paragraph content. ";
+
+      // Modify the link's href attribute
+      const link = paragraph.querySelector("a");
+      link.href = "https://www.example.com";
+    </script>
+  </body>
+</html>
+`

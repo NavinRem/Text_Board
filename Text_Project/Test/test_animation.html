@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+    <style>
+      .group {
+        position: relative;
+        height: 30px;
+        overflow: hidden;
+        color: aliceblue;
+        background-color: black;
+        border-bottom: 2px solid blueviolet;
+        border-top: 2px solid blueviolet;
+      }
+      .group .text {
+        position: absolute;
+        margin: 5px 0;
+        padding: 0;
+        width: max-content;
+        animation: my-animation 24s linear infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="group">
+        <p class="text">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore non
+          exercitationem similique nesciunt quaerat, cumque tempora sed, commodi
+          eveniet sint tempore cum consectetur ratione repellendus totam nostrum
+          et expedita dicta?
+        </p>
+      </div>
+    </div>
+
+    <script>
+      var style = document.createElement("style");
+      var position = "right";
+
+      style.innerHTML = `
+        @keyframes my-animation{
+            0%{${position}: -${
+        document.querySelector(".text").offsetWidth + 10
+      }px;}
+            100%{${postion}: 100%;}
+        }`;
+
+      document.head.append(style);
+    </script>
+  </body>
+</html>

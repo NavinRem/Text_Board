@@ -8,16 +8,21 @@
     <link rel="stylesheet" href="edit.css" />
     <style>
       body {
-        background: url(https://cdn.dribbble.com/users/1347217/screenshots/17831812/media/ad5b974b3416d541a0439b87deb1180d.jpg?resize=800x600&vertical=center);
+        background-image: url("/Text_Project/Home_img.png");
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
         background-attachment: fixed;
+      }
+      button {
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
-    <div class="Container">
-      <div class="Header" style="display: flex">
+    <div class="main-container">
+      <!--Header-->
+      <div class="Header">
         <div class="logo_div">
           <span class="Texto_logo">Texto</span>
         </div>
@@ -31,34 +36,132 @@
         </div>
       </div>
 
+      <!--Body of edit part-->
       <div class="edit_container">
-        <textarea
-          placeholder="Enter your text here (multiple lines allowed)"
-        ></textarea>
-        <div class="edit_title">
-          <span>Edit Details</span>
-          <span id="preview">Preview</span>
+        <!--Contain everything-->
+        <div class="Input">
+          <input
+            type="text"
+            placeholder="Input your text here...."
+            id="input-text"
+          />
+          <div class="Ent_btn">
+            <button onclick="Input_string()">Enter</button>
+          </div>
         </div>
-        <div style="display: flex">
-          <div class="edit_panel">
-            <div class="edit_name">
-              <span>Text Size</span>
-              <span>Text Color</span>
-              <span>Background Color</span>
-              <span>Font Family</span>
-              <span>Text Speed</span>
-              <span>Blink Speed</span>
-              <span>Scroll Direction</span>
-            </div>
-            <div class="edit_tool">
-              <!--Tool for editing-->
+        <div class="themes">
+          <span class="title-theme">Themes Samples</span>
+          <div class="templetes">
+            <!--Contains sample templetes-->
+            <!--Contains animation linear scroll-->
+            <button class="btn common-btn" id="t1" onclick="t1btn_change()">
+              I love You
+            </button>
+            <button class="btn common-btn" id="t2">I love You</button>
+            <button class="btn common-btn" id="t3">I love You</button>
+            <button class="btn common-btn" id="t4">I love You</button>
+            <button class="btn common-btn" id="t5">I love You</button>
+            <button class="btn common-btn" id="t6">I love You</button>
+            <button class="btn common-btn" id="t7">I love You</button>
+            <button class="btn common-btn" id="t8">I love You</button>
+            <button class="btn common-btn" id="t9">I love You</button>
+            <button class="btn common-btn" id="t10">I love You</button>
+            <button class="btn common-btn" id="t11">I love You</button>
+            <button class="btn common-btn" id="t12">I love You</button>
+            <button class="btn common-btn" id="t13">I love You</button>
+            <button class="btn common-btn" id="t14">I love You</button>
+            <button class="btn common-btn" id="t15">I love You</button>
+          </div>
+        </div>
+        <div class="edit_body">
+          <!--Preview and Edit-->
+          <div class="preview">
+            <!--Preview-->
+            <span class="edit-styling"> Preview </span>
+            <div class="preview_container">
+              <!--Display panel-->
+              <div class="text-container">
+                <span class="scrolling-text" id="run-text">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Exercitationem quae nisi molestias facilis fugit pariatur
+                  sequi omnis nemo distinctio quis delectus at non, iste
+                  architecto saepe deserunt ullam, vel voluptatibus!
+                </span>
+              </div>
+              <a href="display.html">
+                <button class="run-btn">Run</button>
+              </a>
             </div>
           </div>
-          <div class="pre_output">
-            <span>Enter your text here (multiple lines allowed)</span>
+          <div class="edit-part">
+            <!--Edit-->
+            <span class="edit-styling">Edit</span>
+
+            <div class="edit-panel">
+              <div class="edit-part-1">
+                <div class="names-edit">
+                  <span>Text Size</span>
+                  <span>Text Color</span>
+                  <span>Font Family</span>
+                  <span>Text Style</span>
+                </div>
+                <div class="func-edit-1">
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="50"
+                    class="range-styled"
+                  />
+                  <input type="color" />
+                  <select class="select-er">
+                    <option>Arial</option>
+                    <option>Cambria</option>
+                    <option value="">Time New Romans</option>
+                  </select>
+                  <select class="select-er">
+                    <option>Bold</option>
+                    <option>Italic</option>
+                    <option>Underline</option>
+                    <option>Line through</option>
+                  </select>
+                </div>
+              </div>
+              <div class="edit-part-2">
+                <div class="names-edit">
+                  <span> Blink Speed </span>
+                  <span> Background Color </span>
+                  <span> Text Speed </span>
+                  <span> Scroll Direction </span>
+                </div>
+
+                <div class="func-edit-2">
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="50"
+                    class="range-styled"
+                  />
+                  <input type="color" />
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="50"
+                    class="range-styled"
+                  />
+                  <select class="select-er">
+                    <option>Left to Right</option>
+                    <option>Right to left</option>
+                  </select>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <script src="script1.js"></script>
   </body>
 </html>
