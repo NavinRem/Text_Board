@@ -5,15 +5,17 @@ function Input_string() {
 }
 
 function t1btn_change() {
-  const textElement = document.getElementById("run-text");
-  const buttonElement = document.getElementById("t1");
+  const runTextElement = document.getElementById("run-text"); // Element where you want the gradient
+  const gradientStyleId = "t1"; // ID containing the gradient style
 
-  // Get class names from the button
-  const buttonClasses = buttonElement.classList;
+  // Get the element with the gradient style definition
+  const gradientStyleElement = document.getElementById(gradientStyleId);
 
-  // Assuming the styles for "run-text" are defined in a class
-  for (let i = 0; i < buttonClasses.length; i++) {
-    const className = buttonClasses[i];
-    textElement.classList.add(className);
+  // Check if the element exists (optional)
+  if (gradientStyleElement) {
+    const gradientStyle = gradientStyleElement.style.backgroundImage;
+    runTextElement.style.backgroundImage = gradientStyle;
+  } else {
+    console.error(`Element with ID "${gradientStyleId}" not found.`); // Handle error if element doesn't exist
   }
 }
