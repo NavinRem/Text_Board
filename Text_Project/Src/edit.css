@@ -337,3 +337,11 @@ input[type="range"]::-ms-fill-lower {
 input[type="range"]::-ms-fill-upper {
   background-color: #9a905d;
 }
+/.img.video./
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
