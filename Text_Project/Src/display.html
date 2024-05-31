@@ -93,12 +93,7 @@
         </div>
         <div class="display">
           <div class="run-text-dis">
-            <span class="scrolling-text" id="run-text">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Exercitationem quae nisi molestias facilis fugit pariatur sequi
-              omnis nemo distinctio quis delectus at non, iste architecto saepe
-              deserunt ullam, vel voluptatibus!
-            </span>
+            <span class="scrolling-text" id="text-run"> </span>
           </div>
         </div>
         <div class="grp-btn">
@@ -111,6 +106,10 @@
         </div>
       </div>
     </div>
-    <script src="script1.js"></script>
+
+    <script>
+      const run_text = document.getElementById("run-text").value;
+      document.getElementById("text-run").innerHTML = run_text;
+    </script>
   </body>
 </html>
