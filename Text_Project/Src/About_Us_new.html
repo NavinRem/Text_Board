@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Texto - About Us</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="edit.css" />
+    <style>
+      body {
+        background-image: url("/Text_Project/Home_img.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      .container {
+        display: flex;
+        margin-top: 100px;
+        justify-content: space-around;
+        /* background-color: aqua; */
+      }
+      .container1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        /* background-color: blueviolet; */
+      }
+      .container2 {
+        width: 50%;
+        /* background-color: yellowgreen; */
+      }
+      .btn {
+        width: 200px;
+        padding: 10px;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-weight: bold;
+        margin: 0 15px 0 15px;
+        border: 2px solid;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background-image: none;
+        background-color: rgb(94, 185, 255);
+      }
+      .btn:active {
+        transform: translateY(2px);
+      }
+      p {
+        text-align: justify;
+      }
+      .back_btn {
+        display: flex;
+        justify-content: flex-end;
+      }
+      @media (max-width: 600px) {
+        .container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 50px;
+          margin-top: 80px;
+        }
+        .container1 {
+          align-items: center;
+        }
+        .container2 {
+          width: 90%;
+          padding-bottom: 20px;
+        }
+        .text1 {
+          width: 100%;
+          height: 15%;
+        }
+        .text2 {
+          width: 100%;
+          height: 85%;
+          font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        }
+        h3 {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="Header">
+        <div class="logo_div">
+          <span class="Texto_logo">Texto</span>
+        </div>
+        <div class="Menu_panel">
+          <a href="index.html">
+            <button>Home</button>
+          </a>
+          <a href="About_Us_new.html">
+            <button>About Us</button>
+          </a>
+          <button>Folder</button>
+          <button>Contact</button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="container1">
+          <button class="btn t2">I love You</button>
+          <button class="btn t3">I love You</button>
+          <button class="btn t4">I love You</button>
+        </div>
+        <div class="container2">
+          <div class="text1">
+            <h3>About Us</h3>
+          </div>
+          <div class="text2">
+            <p>
+              Welcome to Texto, your premier destination for seamless text
+              editing and enhancement! At Texto, we understand the power of
+              words and the importance of precision in communication. Whether
+              you're drafting an important document, creating compelling
+              content, or refining your creative writing, our platform is
+              designed to make your text editing experience smooth, efficient,
+              and enjoyable. Our Mission Our mission is to empower individuals
+              and businesses with the tools they need to perfect their written
+              communication. We strive to provide an intuitive and user-friendly
+              platform that caters to both casual users and professional
+              writers. With TextCraft, you can ensure your text is clear,
+              concise, and impactful.
+            </p>
+            <div class="back_btn">
+              <a href="edit.html">
+                <button class="btn t1" style="width: 100px">
+                  Back to edit
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Main Container-->
+  </body>
+</html>

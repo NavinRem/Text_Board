@@ -20,7 +20,7 @@
     </style>
   </head>
   <body>
-    <div class="main-container">
+    <div id="edit_container" class="main-container">
       <!--Header-->
       <div class="Header">
         <div class="logo_div">
@@ -30,7 +30,9 @@
           <a href="index.html">
             <button>Home</button>
           </a>
-          <button>About Us</button>
+          <a href="About_Us_new.html">
+            <button>About Us</button>
+          </a>
           <button>Folder</button>
           <button>Contact</button>
         </div>
@@ -54,23 +56,21 @@
           <div class="templetes">
             <!--Contains sample templetes-->
             <!--Contains animation linear scroll-->
-            <button class="btn common-btn" id="t1" onclick="t1btn_change()">
-              I love You
-            </button>
-            <button class="btn common-btn" id="t2">I love You</button>
-            <button class="btn common-btn" id="t3">I love You</button>
-            <button class="btn common-btn" id="t4">I love You</button>
-            <button class="btn common-btn" id="t5">I love You</button>
-            <button class="btn common-btn" id="t6">I love You</button>
-            <button class="btn common-btn" id="t7">I love You</button>
-            <button class="btn common-btn" id="t8">I love You</button>
-            <button class="btn common-btn" id="t9">I love You</button>
-            <button class="btn common-btn" id="t10">I love You</button>
-            <button class="btn common-btn" id="t11">I love You</button>
-            <button class="btn common-btn" id="t12">I love You</button>
-            <button class="btn common-btn" id="t13">I love You</button>
-            <button class="btn common-btn" id="t14">I love You</button>
-            <button class="btn common-btn" id="t15">I love You</button>
+            <button class="common-btn t1">I love You</button>
+            <button class="common-btn t2">I love You</button>
+            <button class="common-btn t3">I love You</button>
+            <button class="common-btn t4">I love You</button>
+            <button class="common-btn t5">I love You</button>
+            <button class="common-btn t6">I love You</button>
+            <button class="common-btn t7">I love You</button>
+            <button class="common-btn t8">I love You</button>
+            <button class="common-btn t9">I love You</button>
+            <button class="common-btn t10">I love You</button>
+            <button class="common-btn t11">I love You</button>
+            <button class="common-btn t12">I love You</button>
+            <button class="common-btn t13">I love You</button>
+            <button class="common-btn t14">I love You</button>
+            <button class="common-btn t15">I love You</button>
           </div>
         </div>
         <div class="edit_body">
@@ -89,7 +89,7 @@
                 </span>
               </div>
               <a href="display.html">
-                <button class="run-btn">Run</button>
+                <button class="run-btn" id="run-b">Run</button>
               </a>
             </div>
           </div>
@@ -108,22 +108,23 @@
                 <div class="func-edit-1">
                   <input
                     type="range"
-                    min="0"
+                    min="1"
                     max="100"
-                    value="50"
+                    value="25"
+                    id="textSize"
                     class="range-styled"
                   />
-                  <input type="color" />
-                  <select class="select-er">
+                  <input type="color" id="textColor" value="#0000" />
+                  <select id="fontFamily" class="select-er">
+                    <option>Time New Romans</option>
                     <option>Arial</option>
                     <option>Cambria</option>
-                    <option value="">Time New Romans</option>
                   </select>
-                  <select class="select-er">
+                  <select id="textStyle" class="select-er">
+                    <option>Normal</option>
                     <option>Bold</option>
                     <option>Italic</option>
                     <option>Underline</option>
-                    <option>Line through</option>
                   </select>
                 </div>
               </div>
@@ -139,21 +140,24 @@
                   <input
                     type="range"
                     min="0"
-                    max="100"
-                    value="50"
+                    max="5"
+                    value="0"
+                    id="blinkSpeed"
                     class="range-styled"
                   />
-                  <input type="color" />
+                  <input type="color" id="bgColor" value="#00bfff" />
                   <input
                     type="range"
-                    min="0"
-                    max="100"
-                    value="50"
-                    class="range-styled"
+                    min="1"
+                    max="6"
+                    value="3"
+                    step="1"
+                    id="textSpeed"
+                    oninput="updateSpeed(this.value)"
                   />
-                  <select class="select-er">
-                    <option>Left to Right</option>
-                    <option>Right to left</option>
+                  <select id="scrollDirection" class="select-er">
+                    <option value="normal">Right to left</option>
+                    <option value="reverse">Left to right</option>
                   </select>
                 </div>
               </div>
