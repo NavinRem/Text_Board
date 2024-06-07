@@ -18,7 +18,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: fit-content;
+        height: 430px;
       }
       .grp-btn {
         display: flex;
@@ -70,11 +70,24 @@
         overflow: hidden; /* Hide overflowing text */
         white-space: nowrap; /* Prevent text wrapping */
       }
+
+      @media (fullscreen), (-webkit-fullscreen), (-moz-fullscreen) {
+        /* Styles for full screen mode */
+        .Header {
+          display: none;
+        }
+        .full-screen {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          background-color: blueviolet;
+        }
+      }
     </style>
   </head>
   <body>
     <div class="main-container">
-      <div class="Header">
+      <div class="Header" id="header">
         <div class="logo_div">
           <span class="Texto_logo">Texto</span>
         </div>
@@ -93,23 +106,89 @@
         </div>
         <div class="display">
           <div class="run-text-dis">
-            <span class="scrolling-text" id="text-run"> </span>
+            <span id="text-run"> </span>
           </div>
         </div>
         <div class="grp-btn">
           <a href="edit.html">
             <button class="btn-func" id="purple-btn">Back to Edit</button>
           </a>
-          <button class="btn-func">Pause</button>
-          <button class="btn-func">Full Screen</button>
+          <button class="btn-func" id="pause-btn">Pause</button>
+          <button class="btn-func" id="full-btn">Full Screen</button>
           <button class="btn-func" id="green-btn">Save</button>
         </div>
       </div>
     </div>
-
     <script>
-      const run_text = document.getElementById("run-text").value;
-      document.getElementById("text-run").innerHTML = run_text;
+      document.addEventListener("DOMContentLoaded", () => {
+        const styledText = localStorage.getItem("run-text");
+        if (styledText) {
+          document.getElementById("text-run").innerHTML = styledText;
+        }
+      });
+
+      document.getElementById("pause-btn").addEventListener("click", () => {
+        const Runtext = document.getElementById("run-text");
+        const currentAnimationState = Runtext.style.animationPlayState;
+
+        if (currentAnimationState === "paused" || !currentAnimationState) {
+          Runtext.style.animationPlayState = "running";
+          document.getElementById("pause-btn").textContent = "Pause";
+        } else {
+          Runtext.style.animationPlayState = "paused";
+          document.getElementById("pause-btn").textContent = "Resume";
+        }
+      });
+
+      document.getElementById("full-btn").addEventListener("click", () => {
+        const elem = document.documentElement;
+        if (!document.fullscreenElement) {
+          if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+            // setFullScrStyle();
+          } else if (elem.mozRequestFullScreen) {
+            // Firefox
+            elem.mozRequestFullScreen();
+          } else if (elem.webkitRequestFullscreen) {
+            // Chrome, Safari, Opera
+            elem.webkitRequestFullscreen();
+          } else if (elem.msRequestFullscreen) {
+            // IE/Edge
+            elem.msRequestFullscreen();
+          }
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.mozCancelFullScreen) {
+            // Firefox
+            document.mozCancelFullScreen();
+          } else if (document.webkitExitFullscreen) {
+            // Chrome, Safari, Opera
+            document.webkitExitFullscreen();
+          } else if (document.msExitFullscreen) {
+            // IE/Edge
+            document.msExitFullscreen();
+          }
+        }
+      });
+
+      function setFullScrStyle() {
+        const main_cont = document.querySelector(".full-screen");
+        const header_hide = document.querySelector(".Header");
+        const dis_title = document.querySelector(".main-title");
+        const dis_text = document.querySelector(".run-text-dis");
+        const grp_btn = document.querySelector(".grp-btn");
+
+        main_cont.style.display = "flex";
+        main_cont.style.flexDirection = "column";
+        main_cont.style.justifyContent = "space-between";
+        main_cont.style.height = "100%";
+
+        header_hide.style.display = "none";
+        dis_title.style.display = "none";
+        dis_text.style.backgroundColor = "cyan";
+        grp_btn.style.backgroundColor = "yellowgreen";
+      }
     </script>
   </body>
 </html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adjustable Text Scroller</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* styles.css */
+      .scroller {
+        width: 400px;
+        height: 50px;
+        overflow: hidden;
+        white-space: nowrap;
+        border: 1px solid #333;
+        position: relative;
+      }
+
+      .scroller::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          transparent,
+          white 50%,
+          transparent
+        );
+        animation: scroll 10s linear infinite;
+      }
+
+      @keyframes scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="text-container" class="scroller">
+      This is the sample text that will scroll. Keep it long enough to wrap and
+      scroll or repeat it.
+    </div>
+    <input type="range" id="speedControl" min="1" max="100" value="50" />
+    <script>
+      // script.js
+      document.addEventListener("DOMContentLoaded", function () {
+        const textContainer = document.getElementById("text-container");
+        const speedControl = document.getElementById("speedControl");
+
+        // Initial setup
+        updateScrollSpeed(speedControl.value);
+
+        // Event listener for input change
+        speedControl.addEventListener("input", function () {
+          updateScrollSpeed(this.value);
+        });
+
+        function updateScrollSpeed(value) {
+          const speed = 100 / value; // Normalize speed
+          textContainer.style.animationDuration = `${speed}s`;
+        }
+      });
+    </script>
+  </body>
+</html>

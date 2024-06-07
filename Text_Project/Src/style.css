@@ -56,10 +56,12 @@
   font-weight: bolder;
   font-size: 45px;
   margin-left: -25px;
+  text-align: center;
 }
 .STitle {
   font-family: Cambria;
   font-size: 20px;
+  text-align: center;
 }
 .btn_start {
   display: flex;
